@@ -1,9 +1,18 @@
 const inquirer = require('inquirer');
 const questions = [
     {
+        type: 'list',
+        name:'choice',
+        message:"What option do you want?",
+        choices: ['I have a csv file', 'I will link property manually'],
+    },
+    {
       type: 'input',
       name: 'csvFilepath',
-      message: 'Write the filepath for the CSV'
+      message: 'Write the filepath for the CSV',
+      when(answers) {
+          return answers.choice === 'I have a csv file';
+      }
     },
     {
       type: 'input',
