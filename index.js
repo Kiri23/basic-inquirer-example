@@ -29,5 +29,8 @@ const questions = [
     },
   ];
 
-  const answers = inquirer.prompt(questions)
-  answers.then(ans => console.log(ans));
+  const linkProperty = () => {
+    const answers = inquirer.prompt(questions)
+    answers.then(ans => console.log(ans));
+  }
+  module.exports = linkProperty
