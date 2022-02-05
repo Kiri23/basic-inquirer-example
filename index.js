@@ -1,4 +1,6 @@
 const inquirer = require('inquirer');
+inquirer.registerPrompt('datetime', require('inquirer-datepicker-prompt'))
+
 const questions = [
     {
         type: 'list',
@@ -20,7 +22,7 @@ const questions = [
       message: 'Enter the yardi integration id'
     },
     {
-      type: 'input',
+      type: 'datetime',
       name: 'activationDate',
       message: 'Enter activation date'
     },
