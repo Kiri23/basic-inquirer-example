@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 inquirer.registerPrompt('datetime', require('inquirer-datepicker-prompt'))
+inquirer.registerPrompt('file-tree-selection', require('inquirer-file-tree-selection-prompt'))
 
 const questions = [
     {
@@ -9,9 +10,9 @@ const questions = [
         choices: ['I have a csv file', 'I will link property manually'],
     },
     {
-      type: 'input',
+      type: 'file-tree-selection',
       name: 'csvFilepath',
-      message: 'Write the filepath for the CSV',
+      message: 'Chose the filepath for the CSV',
       when(answers) {
           return answers.choice === 'I have a csv file';
       }
